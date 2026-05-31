@@ -281,13 +281,14 @@ def attach_context(entities: List[dict], text: str) -> List[dict]:
     spans = list(iter_sentences(text))
     for entity in entities:
         entity["context"] = find_context(spans, entity["start"], entity["end"])
+        entity.pop("method", None)
     return entities
 
 
 def save_entity_csv(csv_path: Path, entities: List[dict]) -> None:
     with csv_path.open("w", encoding="utf-8-sig", newline="") as file:
         writer = csv.writer(file)
-        writer.writerow(["实体名称", "实体类别", "起始位置", "结束位置", "抽取方式", "上下文"])
+        writer.writerow(["实体名称", "实体类别", "起始位置", "结束位置", "上下文"])
         for entity in entities:
             writer.writerow(
                 [
@@ -295,7 +296,6 @@ def save_entity_csv(csv_path: Path, entities: List[dict]) -> None:
                     entity["category"],
                     entity["start"],
                     entity["end"],
-                    entity["method"],
                     entity["context"],
                 ]
             )

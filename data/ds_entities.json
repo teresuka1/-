@@ -1,7 +1,7 @@
 {
   "source_file": "data\\ds.txt",
   "text_length": 2778,
-  "entity_count": 607,
+  "entity_count": 610,
   "entities": [
     {
       "text": "数据结构",
@@ -780,6 +780,14 @@
       "context": "单链表的每个结点只包含一个指向后继结点的指针。"
     },
     {
+      "text": "后继结点",
+      "category": "基础概念",
+      "start": 569,
+      "end": 573,
+      "method": "dictionary",
+      "context": "单链表的每个结点只包含一个指向后继结点的指针。"
+    },
+    {
       "text": "结点",
       "category": "基础概念",
       "start": 571,
@@ -820,10 +828,26 @@
       "context": "双向链表的每个结点包含指向前驱结点和后继结点的两个指针。"
     },
     {
+      "text": "前驱结点",
+      "category": "基础概念",
+      "start": 590,
+      "end": 594,
+      "method": "dictionary",
+      "context": "双向链表的每个结点包含指向前驱结点和后继结点的两个指针。"
+    },
+    {
       "text": "结点",
       "category": "基础概念",
       "start": 592,
       "end": 594,
+      "method": "dictionary",
+      "context": "双向链表的每个结点包含指向前驱结点和后继结点的两个指针。"
+    },
+    {
+      "text": "后继结点",
+      "category": "基础概念",
+      "start": 595,
+      "end": 599,
       "method": "dictionary",
       "context": "双向链表的每个结点包含指向前驱结点和后继结点的两个指针。"
     },

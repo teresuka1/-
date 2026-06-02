@@ -3,7 +3,7 @@
   "entity_source_file": "data\\ds_entities_disambiguated.json",
   "relation_count": 168,
   "relation_extraction": {
-    "mention_count": 426,
+    "mention_count": 425,
     "sentence_count": 125,
     "raw_relation_candidate_count": 182,
     "unique_sentence_relation_count": 173,
@@ -20,20 +20,20 @@
         ],
         "right_triggers": [],
         "subject_categories": [
-          "算法",
           "结构子类",
-          "基础概念",
+          "逻辑结构",
           "数据结构",
-          "逻辑结构"
+          "基础概念",
+          "算法"
         ],
         "object_categories": [
-          "存储结构",
-          "算法",
           "应用问题",
           "结构子类",
-          "基础概念",
+          "存储结构",
+          "逻辑结构",
           "数据结构",
-          "逻辑结构"
+          "基础概念",
+          "算法"
         ]
       },
       {
@@ -48,24 +48,24 @@
         ],
         "right_triggers": [],
         "subject_categories": [
-          "存储结构",
-          "算法",
           "应用问题",
           "结构子类",
-          "基础概念",
+          "存储结构",
+          "逻辑结构",
           "数据结构",
-          "逻辑结构"
+          "基础概念",
+          "算法"
         ],
         "object_categories": [
-          "逻辑结构",
+          "应用问题",
+          "结构子类",
           "操作",
           "存储结构",
-          "性质特征",
-          "应用问题",
+          "逻辑结构",
           "数据结构",
-          "算法",
-          "结构子类",
-          "基础概念"
+          "性质特征",
+          "基础概念",
+          "算法"
         ]
       },
       {
@@ -79,19 +79,19 @@
           "构成"
         ],
         "subject_categories": [
-          "存储结构",
           "结构子类",
-          "基础概念",
+          "存储结构",
+          "逻辑结构",
           "数据结构",
-          "逻辑结构"
+          "基础概念"
         ],
         "object_categories": [
-          "性质特征",
-          "存储结构",
           "结构子类",
-          "基础概念",
+          "存储结构",
+          "逻辑结构",
           "数据结构",
-          "逻辑结构"
+          "性质特征",
+          "基础概念"
         ]
       },
       {
@@ -106,11 +106,11 @@
         ],
         "right_triggers": [],
         "subject_categories": [
-          "存储结构",
           "结构子类",
-          "基础概念",
+          "存储结构",
+          "逻辑结构",
           "数据结构",
-          "逻辑结构"
+          "基础概念"
         ],
         "object_categories": [
           "操作"
@@ -130,13 +130,13 @@
         ],
         "right_triggers": [],
         "subject_categories": [
-          "存储结构",
-          "算法",
           "应用问题",
           "结构子类",
-          "基础概念",
+          "存储结构",
+          "逻辑结构",
           "数据结构",
-          "逻辑结构"
+          "基础概念",
+          "算法"
         ],
         "object_categories": [
           "性质特征"
@@ -151,10 +151,10 @@
         ],
         "right_triggers": [],
         "subject_categories": [
-          "数据结构",
           "基础概念",
           "结构子类",
-          "逻辑结构"
+          "逻辑结构",
+          "数据结构"
         ],
         "object_categories": [
           "结构子类",
@@ -175,11 +175,11 @@
         ],
         "right_triggers": [],
         "subject_categories": [
-          "算法",
           "结构子类",
-          "基础概念",
+          "逻辑结构",
           "数据结构",
-          "逻辑结构"
+          "基础概念",
+          "算法"
         ],
         "object_categories": [
           "应用问题"
@@ -198,22 +198,22 @@
           "有关"
         ],
         "subject_categories": [
-          "存储结构",
-          "算法",
           "应用问题",
           "结构子类",
-          "基础概念",
+          "存储结构",
+          "逻辑结构",
           "数据结构",
-          "逻辑结构"
+          "基础概念",
+          "算法"
         ],
         "object_categories": [
-          "存储结构",
-          "算法",
           "应用问题",
           "结构子类",
-          "基础概念",
+          "存储结构",
+          "逻辑结构",
           "数据结构",
-          "逻辑结构"
+          "基础概念",
+          "算法"
         ]
       },
       {
@@ -3915,9 +3915,9 @@
       "subject": "红黑树",
       "subject_category": "结构子类",
       "predicate": "属于",
-      "object_id": "数据结构:树",
-      "object": "树",
-      "object_category": "数据结构",
+      "object_id": "结构子类:二叉查找树",
+      "object": "二叉查找树",
+      "object_category": "结构子类",
       "confidence": 0.92,
       "rules": [
         "hypernym"

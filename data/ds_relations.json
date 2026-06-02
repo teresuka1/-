@@ -1,13 +1,13 @@
 {
   "source_file": "data\\ds.txt",
   "entity_source_file": "data\\ds_entities_disambiguated.json",
-  "relation_count": 173,
+  "relation_count": 168,
   "relation_extraction": {
-    "mention_count": 434,
-    "sentence_count": 127,
-    "raw_relation_candidate_count": 187,
-    "unique_sentence_relation_count": 178,
-    "aggregated_relation_count": 173,
+    "mention_count": 426,
+    "sentence_count": 125,
+    "raw_relation_candidate_count": 182,
+    "unique_sentence_relation_count": 173,
+    "aggregated_relation_count": 168,
     "method": "限定域关系抽取：基于实体消歧结果的句内实体对遍历，结合关系触发词、句式模板和实体类别约束抽取三元组",
     "relation_rules": [
       {
@@ -20,20 +20,20 @@
         ],
         "right_triggers": [],
         "subject_categories": [
-          "数据结构",
-          "逻辑结构",
-          "结构子类",
           "算法",
-          "基础概念"
+          "结构子类",
+          "基础概念",
+          "数据结构",
+          "逻辑结构"
         ],
         "object_categories": [
-          "数据结构",
-          "应用问题",
-          "逻辑结构",
-          "结构子类",
           "存储结构",
           "算法",
-          "基础概念"
+          "应用问题",
+          "结构子类",
+          "基础概念",
+          "数据结构",
+          "逻辑结构"
         ]
       },
       {
@@ -48,24 +48,24 @@
         ],
         "right_triggers": [],
         "subject_categories": [
-          "数据结构",
-          "应用问题",
-          "逻辑结构",
-          "结构子类",
           "存储结构",
           "算法",
-          "基础概念"
+          "应用问题",
+          "结构子类",
+          "基础概念",
+          "数据结构",
+          "逻辑结构"
         ],
         "object_categories": [
-          "结构子类",
-          "性质特征",
-          "数据结构",
-          "应用问题",
           "逻辑结构",
+          "操作",
           "存储结构",
+          "性质特征",
+          "应用问题",
+          "数据结构",
           "算法",
-          "基础概念",
-          "操作"
+          "结构子类",
+          "基础概念"
         ]
       },
       {
@@ -79,19 +79,19 @@
           "构成"
         ],
         "subject_categories": [
-          "数据结构",
-          "逻辑结构",
-          "结构子类",
           "存储结构",
-          "基础概念"
+          "结构子类",
+          "基础概念",
+          "数据结构",
+          "逻辑结构"
         ],
         "object_categories": [
-          "数据结构",
-          "逻辑结构",
-          "结构子类",
-          "存储结构",
           "性质特征",
-          "基础概念"
+          "存储结构",
+          "结构子类",
+          "基础概念",
+          "数据结构",
+          "逻辑结构"
         ]
       },
       {
@@ -106,11 +106,11 @@
         ],
         "right_triggers": [],
         "subject_categories": [
-          "数据结构",
-          "逻辑结构",
-          "结构子类",
           "存储结构",
-          "基础概念"
+          "结构子类",
+          "基础概念",
+          "数据结构",
+          "逻辑结构"
         ],
         "object_categories": [
           "操作"
@@ -130,13 +130,13 @@
         ],
         "right_triggers": [],
         "subject_categories": [
-          "数据结构",
-          "应用问题",
-          "逻辑结构",
-          "结构子类",
           "存储结构",
           "算法",
-          "基础概念"
+          "应用问题",
+          "结构子类",
+          "基础概念",
+          "数据结构",
+          "逻辑结构"
         ],
         "object_categories": [
           "性质特征"
@@ -152,9 +152,9 @@
         "right_triggers": [],
         "subject_categories": [
           "数据结构",
-          "逻辑结构",
           "基础概念",
-          "结构子类"
+          "结构子类",
+          "逻辑结构"
         ],
         "object_categories": [
           "结构子类",
@@ -175,11 +175,11 @@
         ],
         "right_triggers": [],
         "subject_categories": [
-          "数据结构",
-          "逻辑结构",
-          "结构子类",
           "算法",
-          "基础概念"
+          "结构子类",
+          "基础概念",
+          "数据结构",
+          "逻辑结构"
         ],
         "object_categories": [
           "应用问题"
@@ -198,22 +198,22 @@
           "有关"
         ],
         "subject_categories": [
-          "数据结构",
-          "应用问题",
-          "逻辑结构",
-          "结构子类",
           "存储结构",
           "算法",
-          "基础概念"
+          "应用问题",
+          "结构子类",
+          "基础概念",
+          "数据结构",
+          "逻辑结构"
         ],
         "object_categories": [
-          "数据结构",
-          "应用问题",
-          "逻辑结构",
-          "结构子类",
           "存储结构",
           "算法",
-          "基础概念"
+          "应用问题",
+          "结构子类",
+          "基础概念",
+          "数据结构",
+          "逻辑结构"
         ]
       },
       {
@@ -558,9 +558,9 @@
       "evidence_count": 1,
       "evidences": [
         {
-          "text": "图的链式存储结构包括邻接表、十字链表和邻接多重表。",
+          "text": "链式存储结构包括邻接表、十字链表和邻接多重表。",
           "start": 1959,
-          "end": 1984
+          "end": 1982
         }
       ]
     },
@@ -582,9 +582,9 @@
       "evidence_count": 1,
       "evidences": [
         {
-          "text": "图的链式存储结构包括邻接表、十字链表和邻接多重表。",
+          "text": "链式存储结构包括邻接表、十字链表和邻接多重表。",
           "start": 1959,
-          "end": 1984
+          "end": 1982
         }
       ]
     },
@@ -606,9 +606,9 @@
       "evidence_count": 1,
       "evidences": [
         {
-          "text": "图的链式存储结构包括邻接表、十字链表和邻接多重表。",
+          "text": "链式存储结构包括邻接表、十字链表和邻接多重表。",
           "start": 1959,
-          "end": 1984
+          "end": 1982
         }
       ]
     },
@@ -664,54 +664,6 @@
       "subject_id": "应用问题:最小生成树",
       "subject": "最小生成树",
       "subject_category": "应用问题",
-      "predicate": "具有性质",
-      "object_id": "性质特征:带权",
-      "object": "带权",
-      "object_category": "性质特征",
-      "confidence": 0.82,
-      "rules": [
-        "has_property"
-      ],
-      "triggers": [
-        "是"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "最小生成树是带权连通图中权值总和最小的生成树。",
-          "start": 2144,
-          "end": 2167
-        }
-      ]
-    },
-    {
-      "subject_id": "应用问题:最小生成树",
-      "subject": "最小生成树",
-      "subject_category": "应用问题",
-      "predicate": "具有性质",
-      "object_id": "性质特征:连通",
-      "object": "连通",
-      "object_category": "性质特征",
-      "confidence": 0.82,
-      "rules": [
-        "has_property"
-      ],
-      "triggers": [
-        "是"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "最小生成树是带权连通图中权值总和最小的生成树。",
-          "start": 2144,
-          "end": 2167
-        }
-      ]
-    },
-    {
-      "subject_id": "应用问题:最小生成树",
-      "subject": "最小生成树",
-      "subject_category": "应用问题",
       "predicate": "求解问题",
       "object_id": "算法:Kruskal算法",
       "object": "Kruskal算法",
@@ -727,8 +679,8 @@
       "evidences": [
         {
           "text": "求最小生成树的算法包括Prim算法和Kruskal算法。",
-          "start": 2167,
-          "end": 2195
+          "start": 2137,
+          "end": 2165
         }
       ]
     },
@@ -751,8 +703,8 @@
       "evidences": [
         {
           "text": "求最小生成树的算法包括Prim算法和Kruskal算法。",
-          "start": 2167,
-          "end": 2195
+          "start": 2137,
+          "end": 2165
         }
       ]
     },
@@ -775,8 +727,8 @@
       "evidences": [
         {
           "text": "求最短路径的算法包括Dijkstra算法和Floyd算法。",
-          "start": 2250,
-          "end": 2279
+          "start": 2220,
+          "end": 2249
         }
       ]
     },
@@ -799,8 +751,8 @@
       "evidences": [
         {
           "text": "求最短路径的算法包括Dijkstra算法和Floyd算法。",
-          "start": 2250,
-          "end": 2279
+          "start": 2220,
+          "end": 2249
         }
       ]
     },
@@ -1039,8 +991,8 @@
       "evidences": [
         {
           "text": "哈希表的主要操作包括插入、删除和查找。",
-          "start": 2688,
-          "end": 2707
+          "start": 2658,
+          "end": 2677
         }
       ]
     },
@@ -1063,8 +1015,8 @@
       "evidences": [
         {
           "text": "哈希表的主要操作包括插入、删除和查找。",
-          "start": 2688,
-          "end": 2707
+          "start": 2658,
+          "end": 2677
         }
       ]
     },
@@ -1087,8 +1039,8 @@
       "evidences": [
         {
           "text": "哈希表的主要操作包括插入、删除和查找。",
-          "start": 2688,
-          "end": 2707
+          "start": 2658,
+          "end": 2677
         }
       ]
     },
@@ -1169,30 +1121,6 @@
       "subject": "图",
       "subject_category": "数据结构",
       "predicate": "包含",
-      "object_id": "性质特征:连通",
-      "object": "连通",
-      "object_category": "性质特征",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "包括"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "图的基本概念包括连通图、生成树、最小生成树、重连通图、最短路径和关键路径。",
-          "start": 1884,
-          "end": 1921
-        }
-      ]
-    },
-    {
-      "subject_id": "数据结构:图",
-      "subject": "图",
-      "subject_category": "数据结构",
-      "predicate": "包含",
       "object_id": "数据结构:树",
       "object": "树",
       "object_category": "数据结构",
@@ -1231,8 +1159,8 @@
       "evidences": [
         {
           "text": "图的遍历算法包括深度优先搜索算法和广度优先搜索算法。",
-          "start": 2034,
-          "end": 2060
+          "start": 2032,
+          "end": 2058
         }
       ]
     },
@@ -1255,8 +1183,8 @@
       "evidences": [
         {
           "text": "图相关的其他算法还包括拓扑排序算法。",
-          "start": 2321,
-          "end": 2339
+          "start": 2291,
+          "end": 2309
         }
       ]
     },
@@ -1279,8 +1207,8 @@
       "evidences": [
         {
           "text": "图的遍历算法包括深度优先搜索算法和广度优先搜索算法。",
-          "start": 2034,
-          "end": 2060
+          "start": 2032,
+          "end": 2058
         }
       ]
     },
@@ -1289,8 +1217,8 @@
       "subject": "图",
       "subject_category": "数据结构",
       "predicate": "包含",
-      "object_id": "结构子类:十字链表",
-      "object": "十字链表",
+      "object_id": "结构子类:连通图",
+      "object": "连通图",
       "object_category": "结构子类",
       "confidence": 0.9,
       "rules": [
@@ -1302,57 +1230,9 @@
       "evidence_count": 1,
       "evidences": [
         {
-          "text": "图的链式存储结构包括邻接表、十字链表和邻接多重表。",
-          "start": 1959,
-          "end": 1984
-        }
-      ]
-    },
-    {
-      "subject_id": "数据结构:图",
-      "subject": "图",
-      "subject_category": "数据结构",
-      "predicate": "包含",
-      "object_id": "结构子类:邻接多重表",
-      "object": "邻接多重表",
-      "object_category": "结构子类",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "包括"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "图的链式存储结构包括邻接表、十字链表和邻接多重表。",
-          "start": 1959,
-          "end": 1984
-        }
-      ]
-    },
-    {
-      "subject_id": "数据结构:图",
-      "subject": "图",
-      "subject_category": "数据结构",
-      "predicate": "包含",
-      "object_id": "结构子类:邻接表",
-      "object": "邻接表",
-      "object_category": "结构子类",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "包括"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "图的链式存储结构包括邻接表、十字链表和邻接多重表。",
-          "start": 1959,
-          "end": 1984
+          "text": "图的基本概念包括连通图、生成树、最小生成树、重连通图、最短路径和关键路径。",
+          "start": 1884,
+          "end": 1921
         }
       ]
     },
@@ -1692,8 +1572,8 @@
       "evidences": [
         {
           "text": "查找表可以分为静态查找表和动态查找表。",
-          "start": 2376,
-          "end": 2395
+          "start": 2346,
+          "end": 2365
         }
       ]
     },
@@ -1716,8 +1596,8 @@
       "evidences": [
         {
           "text": "查找表可以分为静态查找表和动态查找表。",
-          "start": 2376,
-          "end": 2395
+          "start": 2346,
+          "end": 2365
         }
       ]
     },
@@ -1740,8 +1620,8 @@
       "evidences": [
         {
           "text": "查找表是一种用于查找数据元素的数据结构。",
-          "start": 2356,
-          "end": 2376
+          "start": 2326,
+          "end": 2346
         }
       ]
     },
@@ -1764,8 +1644,8 @@
       "evidences": [
         {
           "text": "查找表是一种用于查找数据元素的数据结构。",
-          "start": 2356,
-          "end": 2376
+          "start": 2326,
+          "end": 2346
         }
       ]
     },
@@ -3017,8 +2897,8 @@
       "evidences": [
         {
           "text": "Dijkstra算法适合求单源最短路径。",
-          "start": 2279,
-          "end": 2299
+          "start": 2249,
+          "end": 2269
         }
       ]
     },
@@ -3041,8 +2921,8 @@
       "evidences": [
         {
           "text": "Floyd算法适合求所有顶点之间的最短路径。",
-          "start": 2299,
-          "end": 2321
+          "start": 2269,
+          "end": 2291
         }
       ]
     },
@@ -3113,8 +2993,8 @@
       "evidences": [
         {
           "text": "B树和B+树常用于数据库索引和文件系统。",
-          "start": 2647,
-          "end": 2667
+          "start": 2617,
+          "end": 2637
         }
       ]
     },
@@ -3137,8 +3017,8 @@
       "evidences": [
         {
           "text": "B树和B+树常用于数据库索引和文件系统。",
-          "start": 2647,
-          "end": 2667
+          "start": 2617,
+          "end": 2637
         }
       ]
     },
@@ -3161,8 +3041,8 @@
       "evidences": [
         {
           "text": "B树和B+树常用于数据库索引和文件系统。",
-          "start": 2647,
-          "end": 2667
+          "start": 2617,
+          "end": 2637
         }
       ]
     },
@@ -3185,8 +3065,8 @@
       "evidences": [
         {
           "text": "B树和B+树常用于数据库索引和文件系统。",
-          "start": 2647,
-          "end": 2667
+          "start": 2617,
+          "end": 2637
         }
       ]
     },
@@ -3257,8 +3137,8 @@
       "evidences": [
         {
           "text": "二叉排序树是一种具有有序性质的二叉树。",
-          "start": 2576,
-          "end": 2595
+          "start": 2546,
+          "end": 2565
         }
       ]
     },
@@ -3281,8 +3161,8 @@
       "evidences": [
         {
           "text": "二叉排序树是一种具有有序性质的二叉树。",
-          "start": 2576,
-          "end": 2595
+          "start": 2546,
+          "end": 2565
         }
       ]
     },
@@ -3497,8 +3377,8 @@
       "evidences": [
         {
           "text": "动态查找表包括二叉排序树、平衡二叉树、红黑树、B树、B+树、键树和哈希表。",
-          "start": 2539,
-          "end": 2576
+          "start": 2509,
+          "end": 2546
         }
       ]
     },
@@ -3521,8 +3401,8 @@
       "evidences": [
         {
           "text": "动态查找表包括二叉排序树、平衡二叉树、红黑树、B树、B+树、键树和哈希表。",
-          "start": 2539,
-          "end": 2576
+          "start": 2509,
+          "end": 2546
         }
       ]
     },
@@ -3545,8 +3425,8 @@
       "evidences": [
         {
           "text": "动态查找表包括二叉排序树、平衡二叉树、红黑树、B树、B+树、键树和哈希表。",
-          "start": 2539,
-          "end": 2576
+          "start": 2509,
+          "end": 2546
         }
       ]
     },
@@ -3569,8 +3449,8 @@
       "evidences": [
         {
           "text": "动态查找表包括二叉排序树、平衡二叉树、红黑树、B树、B+树、键树和哈希表。",
-          "start": 2539,
-          "end": 2576
+          "start": 2509,
+          "end": 2546
         }
       ]
     },
@@ -3593,8 +3473,8 @@
       "evidences": [
         {
           "text": "动态查找表包括二叉排序树、平衡二叉树、红黑树、B树、B+树、键树和哈希表。",
-          "start": 2539,
-          "end": 2576
+          "start": 2509,
+          "end": 2546
         }
       ]
     },
@@ -3617,8 +3497,8 @@
       "evidences": [
         {
           "text": "动态查找表包括二叉排序树、平衡二叉树、红黑树、B树、B+树、键树和哈希表。",
-          "start": 2539,
-          "end": 2576
+          "start": 2509,
+          "end": 2546
         }
       ]
     },
@@ -3641,8 +3521,8 @@
       "evidences": [
         {
           "text": "动态查找表包括二叉排序树、平衡二叉树、红黑树、B树、B+树、键树和哈希表。",
-          "start": 2539,
-          "end": 2576
+          "start": 2509,
+          "end": 2546
         }
       ]
     },
@@ -3665,8 +3545,8 @@
       "evidences": [
         {
           "text": "动态查找表在查找过程中可能进行插入或删除操作，因此查找表的结构可能发生变化。",
-          "start": 2421,
-          "end": 2459
+          "start": 2391,
+          "end": 2429
         }
       ]
     },
@@ -3689,8 +3569,8 @@
       "evidences": [
         {
           "text": "动态查找表在查找过程中可能进行插入或删除操作，因此查找表的结构可能发生变化。",
-          "start": 2421,
-          "end": 2459
+          "start": 2391,
+          "end": 2429
         }
       ]
     },
@@ -4025,8 +3905,8 @@
       "evidences": [
         {
           "text": "红黑树是一种近似平衡的二叉查找树。",
-          "start": 2630,
-          "end": 2647
+          "start": 2600,
+          "end": 2617
         }
       ]
     },
@@ -4049,8 +3929,8 @@
       "evidences": [
         {
           "text": "红黑树是一种近似平衡的二叉查找树。",
-          "start": 2630,
-          "end": 2647
+          "start": 2600,
+          "end": 2617
         }
       ]
     },
@@ -4097,8 +3977,8 @@
       "evidences": [
         {
           "text": "静态查找表的查找方法包括顺序查找、二分查找、分块查找和静态树表查找。",
-          "start": 2461,
-          "end": 2495
+          "start": 2431,
+          "end": 2465
         }
       ]
     },
@@ -4121,8 +4001,8 @@
       "evidences": [
         {
           "text": "静态查找表的查找方法包括顺序查找、二分查找、分块查找和静态树表查找。",
-          "start": 2461,
-          "end": 2495
+          "start": 2431,
+          "end": 2465
         }
       ]
     },
@@ -4145,8 +4025,8 @@
       "evidences": [
         {
           "text": "静态查找表的查找方法包括顺序查找、二分查找、分块查找和静态树表查找。",
-          "start": 2461,
-          "end": 2495
+          "start": 2431,
+          "end": 2465
         }
       ]
     },
@@ -4169,8 +4049,8 @@
       "evidences": [
         {
           "text": "静态查找表的查找方法包括顺序查找、二分查找、分块查找和静态树表查找。",
-          "start": 2461,
-          "end": 2495
+          "start": 2431,
+          "end": 2465
         }
       ]
     },
@@ -4193,8 +4073,8 @@
       "evidences": [
         {
           "text": "静态查找表只进行查找和读取操作，不改变表的存储结构。",
-          "start": 2395,
-          "end": 2421
+          "start": 2365,
+          "end": 2391
         }
       ]
     },
@@ -4217,8 +4097,8 @@
       "evidences": [
         {
           "text": "静态查找表只进行查找和读取操作，不改变表的存储结构。",
-          "start": 2395,
-          "end": 2421
+          "start": 2365,
+          "end": 2391
         }
       ]
     },
@@ -4241,8 +4121,8 @@
       "evidences": [
         {
           "text": "静态查找表只进行查找和读取操作，不改变表的存储结构。",
-          "start": 2395,
-          "end": 2421
+          "start": 2365,
+          "end": 2391
         }
       ]
     },

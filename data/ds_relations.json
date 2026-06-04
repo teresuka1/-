@@ -1,13 +1,13 @@
 {
   "source_file": "data\\ds.txt",
   "entity_source_file": "data\\ds_entities_disambiguated.json",
-  "relation_count": 102,
+  "relation_count": 52,
   "relation_extraction": {
-    "mention_count": 434,
-    "sentence_count": 127,
-    "raw_relation_candidate_count": 110,
-    "unique_sentence_relation_count": 105,
-    "aggregated_relation_count": 102,
+    "mention_count": 426,
+    "sentence_count": 125,
+    "raw_relation_candidate_count": 56,
+    "unique_sentence_relation_count": 54,
+    "aggregated_relation_count": 52,
     "method": "限定域关系抽取：基于实体消歧结果的句内实体对遍历，结合关系触发词、句式模板和实体类别约束抽取三元组",
     "relation_rules": [
       {
@@ -22,18 +22,18 @@
         "subject_categories": [
           "算法",
           "基础概念",
+          "结构子类",
           "数据结构",
-          "逻辑结构",
-          "结构子类"
+          "逻辑结构"
         ],
         "object_categories": [
-          "应用问题",
           "算法",
-          "存储结构",
           "基础概念",
+          "存储结构",
+          "应用问题",
+          "结构子类",
           "数据结构",
-          "逻辑结构",
-          "结构子类"
+          "逻辑结构"
         ]
       },
       {
@@ -48,24 +48,24 @@
         ],
         "right_triggers": [],
         "subject_categories": [
-          "应用问题",
           "算法",
-          "存储结构",
           "基础概念",
+          "存储结构",
+          "应用问题",
+          "结构子类",
           "数据结构",
-          "逻辑结构",
-          "结构子类"
+          "逻辑结构"
         ],
         "object_categories": [
           "算法",
+          "基础概念",
+          "应用问题",
           "性质特征",
-          "数据结构",
           "逻辑结构",
           "结构子类",
-          "应用问题",
           "存储结构",
           "操作",
-          "基础概念"
+          "数据结构"
         ]
       },
       {
@@ -79,120 +79,24 @@
           "构成"
         ],
         "subject_categories": [
-          "存储结构",
           "基础概念",
+          "存储结构",
+          "结构子类",
           "数据结构",
-          "逻辑结构",
-          "结构子类"
+          "逻辑结构"
         ],
         "object_categories": [
+          "基础概念",
           "存储结构",
           "性质特征",
-          "基础概念",
+          "结构子类",
           "数据结构",
-          "逻辑结构",
-          "结构子类"
+          "逻辑结构"
         ]
       }
     ]
   },
   "relations": [
-    {
-      "subject_id": "基础概念:数据结构",
-      "subject": "数据结构",
-      "subject_category": "基础概念",
-      "predicate": "包含",
-      "object_id": "基础概念:物理结构",
-      "object": "物理结构",
-      "object_category": "基础概念",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "分为"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "数据结构可以分为逻辑结构和物理结构。",
-          "start": 146,
-          "end": 164
-        }
-      ]
-    },
-    {
-      "subject_id": "基础概念:数据结构",
-      "subject": "数据结构",
-      "subject_category": "基础概念",
-      "predicate": "包含",
-      "object_id": "基础概念:逻辑结构",
-      "object": "逻辑结构",
-      "object_category": "基础概念",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "分为"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "数据结构可以分为逻辑结构和物理结构。",
-          "start": 146,
-          "end": 164
-        }
-      ]
-    },
-    {
-      "subject_id": "基础概念:物理结构",
-      "subject": "物理结构",
-      "subject_category": "基础概念",
-      "predicate": "包含",
-      "object_id": "存储结构:链式存储",
-      "object": "链式存储",
-      "object_category": "存储结构",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "包括"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "常见的物理结构包括顺序存储结构和链式存储结构。",
-          "start": 235,
-          "end": 258
-        }
-      ]
-    },
-    {
-      "subject_id": "基础概念:物理结构",
-      "subject": "物理结构",
-      "subject_category": "基础概念",
-      "predicate": "包含",
-      "object_id": "存储结构:顺序存储",
-      "object": "顺序存储",
-      "object_category": "存储结构",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "包括"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "常见的物理结构包括顺序存储结构和链式存储结构。",
-          "start": 235,
-          "end": 258
-        }
-      ]
-    },
     {
       "subject_id": "基础概念:结点",
       "subject": "结点",
@@ -233,30 +137,6 @@
       "subject": "逻辑结构",
       "subject_category": "基础概念",
       "predicate": "包含",
-      "object_id": "逻辑结构:图结构",
-      "object": "图结构",
-      "object_category": "逻辑结构",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "包括"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "常见的逻辑结构包括线性结构、树形结构、图结构和集合结构。",
-          "start": 207,
-          "end": 235
-        }
-      ]
-    },
-    {
-      "subject_id": "基础概念:逻辑结构",
-      "subject": "逻辑结构",
-      "subject_category": "基础概念",
-      "predicate": "包含",
       "object_id": "逻辑结构:树形结构",
       "object": "树形结构",
       "object_category": "逻辑结构",
@@ -283,30 +163,6 @@
       "predicate": "包含",
       "object_id": "逻辑结构:线性结构",
       "object": "线性结构",
-      "object_category": "逻辑结构",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "包括"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "常见的逻辑结构包括线性结构、树形结构、图结构和集合结构。",
-          "start": 207,
-          "end": 235
-        }
-      ]
-    },
-    {
-      "subject_id": "基础概念:逻辑结构",
-      "subject": "逻辑结构",
-      "subject_category": "基础概念",
-      "predicate": "包含",
-      "object_id": "逻辑结构:集合结构",
-      "object": "集合结构",
       "object_category": "逻辑结构",
       "confidence": 0.9,
       "rules": [
@@ -377,54 +233,6 @@
       "subject": "链式存储",
       "subject_category": "存储结构",
       "predicate": "包含",
-      "object_id": "结构子类:十字链表",
-      "object": "十字链表",
-      "object_category": "结构子类",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "包括"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "图的链式存储结构包括邻接表、十字链表和邻接多重表。",
-          "start": 1959,
-          "end": 1984
-        }
-      ]
-    },
-    {
-      "subject_id": "存储结构:链式存储",
-      "subject": "链式存储",
-      "subject_category": "存储结构",
-      "predicate": "包含",
-      "object_id": "结构子类:邻接多重表",
-      "object": "邻接多重表",
-      "object_category": "结构子类",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "包括"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "图的链式存储结构包括邻接表、十字链表和邻接多重表。",
-          "start": 1959,
-          "end": 1984
-        }
-      ]
-    },
-    {
-      "subject_id": "存储结构:链式存储",
-      "subject": "链式存储",
-      "subject_category": "存储结构",
-      "predicate": "包含",
       "object_id": "结构子类:邻接表",
       "object": "邻接表",
       "object_category": "结构子类",
@@ -438,129 +246,9 @@
       "evidence_count": 1,
       "evidences": [
         {
-          "text": "图的链式存储结构包括邻接表、十字链表和邻接多重表。",
+          "text": "链式存储结构包括邻接表、十字链表和邻接多重表。",
           "start": 1959,
-          "end": 1984
-        }
-      ]
-    },
-    {
-      "subject_id": "存储结构:顺序存储",
-      "subject": "顺序存储",
-      "subject_category": "存储结构",
-      "predicate": "包含",
-      "object_id": "存储结构:堆分配存储",
-      "object": "堆分配存储",
-      "object_category": "存储结构",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "包括"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "串的顺序存储包括定长顺序存储和堆分配存储。",
-          "start": 1186,
-          "end": 1207
-        }
-      ]
-    },
-    {
-      "subject_id": "应用问题:最小生成树",
-      "subject": "最小生成树",
-      "subject_category": "应用问题",
-      "predicate": "包含",
-      "object_id": "算法:Kruskal算法",
-      "object": "Kruskal算法",
-      "object_category": "算法",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "包括"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "求最小生成树的算法包括Prim算法和Kruskal算法。",
-          "start": 2167,
-          "end": 2195
-        }
-      ]
-    },
-    {
-      "subject_id": "应用问题:最小生成树",
-      "subject": "最小生成树",
-      "subject_category": "应用问题",
-      "predicate": "包含",
-      "object_id": "算法:Prim算法",
-      "object": "Prim算法",
-      "object_category": "算法",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "包括"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "求最小生成树的算法包括Prim算法和Kruskal算法。",
-          "start": 2167,
-          "end": 2195
-        }
-      ]
-    },
-    {
-      "subject_id": "应用问题:最短路径",
-      "subject": "最短路径",
-      "subject_category": "应用问题",
-      "predicate": "包含",
-      "object_id": "算法:Dijkstra算法",
-      "object": "Dijkstra算法",
-      "object_category": "算法",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "包括"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "求最短路径的算法包括Dijkstra算法和Floyd算法。",
-          "start": 2250,
-          "end": 2279
-        }
-      ]
-    },
-    {
-      "subject_id": "应用问题:最短路径",
-      "subject": "最短路径",
-      "subject_category": "应用问题",
-      "predicate": "包含",
-      "object_id": "算法:Floyd算法",
-      "object": "Floyd算法",
-      "object_category": "算法",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "包括"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "求最短路径的算法包括Dijkstra算法和Floyd算法。",
-          "start": 2250,
-          "end": 2279
+          "end": 1982
         }
       ]
     },
@@ -585,102 +273,6 @@
           "text": "串的链式存储包括块链存储。",
           "start": 1207,
           "end": 1220
-        }
-      ]
-    },
-    {
-      "subject_id": "数据结构:串",
-      "subject": "串",
-      "subject_category": "数据结构",
-      "predicate": "包含",
-      "object_id": "存储结构:堆分配存储",
-      "object": "堆分配存储",
-      "object_category": "存储结构",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "包括"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "串的顺序存储包括定长顺序存储和堆分配存储。",
-          "start": 1186,
-          "end": 1207
-        }
-      ]
-    },
-    {
-      "subject_id": "数据结构:串",
-      "subject": "串",
-      "subject_category": "数据结构",
-      "predicate": "包含",
-      "object_id": "存储结构:顺序存储",
-      "object": "顺序存储",
-      "object_category": "存储结构",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "包括"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "串的顺序存储包括定长顺序存储和堆分配存储。",
-          "start": 1186,
-          "end": 1207
-        }
-      ]
-    },
-    {
-      "subject_id": "数据结构:串",
-      "subject": "串",
-      "subject_category": "数据结构",
-      "predicate": "包含",
-      "object_id": "算法:BF算法",
-      "object": "BF算法",
-      "object_category": "算法",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "包括"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "串相关的算法包括BF算法和KMP算法。",
-          "start": 1220,
-          "end": 1239
-        }
-      ]
-    },
-    {
-      "subject_id": "数据结构:串",
-      "subject": "串",
-      "subject_category": "数据结构",
-      "predicate": "包含",
-      "object_id": "算法:KMP算法",
-      "object": "KMP算法",
-      "object_category": "算法",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "包括"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "串相关的算法包括BF算法和KMP算法。",
-          "start": 1220,
-          "end": 1239
         }
       ]
     },
@@ -713,30 +305,6 @@
       "subject": "哈希表",
       "subject_category": "数据结构",
       "predicate": "包含",
-      "object_id": "操作:删除",
-      "object": "删除",
-      "object_category": "操作",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "包括"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "哈希表的主要操作包括插入、删除和查找。",
-          "start": 2688,
-          "end": 2707
-        }
-      ]
-    },
-    {
-      "subject_id": "数据结构:哈希表",
-      "subject": "哈希表",
-      "subject_category": "数据结构",
-      "predicate": "包含",
       "object_id": "操作:插入",
       "object": "插入",
       "object_category": "操作",
@@ -751,32 +319,8 @@
       "evidences": [
         {
           "text": "哈希表的主要操作包括插入、删除和查找。",
-          "start": 2688,
-          "end": 2707
-        }
-      ]
-    },
-    {
-      "subject_id": "数据结构:哈希表",
-      "subject": "哈希表",
-      "subject_category": "数据结构",
-      "predicate": "包含",
-      "object_id": "操作:查找",
-      "object": "查找",
-      "object_category": "操作",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "包括"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "哈希表的主要操作包括插入、删除和查找。",
-          "start": 2688,
-          "end": 2707
+          "start": 2658,
+          "end": 2677
         }
       ]
     },
@@ -833,30 +377,6 @@
       "subject": "图",
       "subject_category": "数据结构",
       "predicate": "包含",
-      "object_id": "应用问题:关键路径",
-      "object": "关键路径",
-      "object_category": "应用问题",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "包括"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "图的基本概念包括连通图、生成树、最小生成树、重连通图、最短路径和关键路径。",
-          "start": 1884,
-          "end": 1921
-        }
-      ]
-    },
-    {
-      "subject_id": "数据结构:图",
-      "subject": "图",
-      "subject_category": "数据结构",
-      "predicate": "包含",
       "object_id": "应用问题:最小生成树",
       "object": "最小生成树",
       "object_category": "应用问题",
@@ -881,102 +401,6 @@
       "subject": "图",
       "subject_category": "数据结构",
       "predicate": "包含",
-      "object_id": "应用问题:最短路径",
-      "object": "最短路径",
-      "object_category": "应用问题",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "包括"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "图的基本概念包括连通图、生成树、最小生成树、重连通图、最短路径和关键路径。",
-          "start": 1884,
-          "end": 1921
-        }
-      ]
-    },
-    {
-      "subject_id": "数据结构:图",
-      "subject": "图",
-      "subject_category": "数据结构",
-      "predicate": "包含",
-      "object_id": "性质特征:连通",
-      "object": "连通",
-      "object_category": "性质特征",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "包括"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "图的基本概念包括连通图、生成树、最小生成树、重连通图、最短路径和关键路径。",
-          "start": 1884,
-          "end": 1921
-        }
-      ]
-    },
-    {
-      "subject_id": "数据结构:图",
-      "subject": "图",
-      "subject_category": "数据结构",
-      "predicate": "包含",
-      "object_id": "数据结构:树",
-      "object": "树",
-      "object_category": "数据结构",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "包括"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "图的基本概念包括连通图、生成树、最小生成树、重连通图、最短路径和关键路径。",
-          "start": 1884,
-          "end": 1921
-        }
-      ]
-    },
-    {
-      "subject_id": "数据结构:图",
-      "subject": "图",
-      "subject_category": "数据结构",
-      "predicate": "包含",
-      "object_id": "算法:广度优先搜索",
-      "object": "广度优先搜索",
-      "object_category": "算法",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "包括"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "图的遍历算法包括深度优先搜索算法和广度优先搜索算法。",
-          "start": 2034,
-          "end": 2060
-        }
-      ]
-    },
-    {
-      "subject_id": "数据结构:图",
-      "subject": "图",
-      "subject_category": "数据结构",
-      "predicate": "包含",
       "object_id": "算法:拓扑排序算法",
       "object": "拓扑排序算法",
       "object_category": "算法",
@@ -991,8 +415,8 @@
       "evidences": [
         {
           "text": "图相关的其他算法还包括拓扑排序算法。",
-          "start": 2321,
-          "end": 2339
+          "start": 2291,
+          "end": 2309
         }
       ]
     },
@@ -1001,32 +425,8 @@
       "subject": "图",
       "subject_category": "数据结构",
       "predicate": "包含",
-      "object_id": "算法:深度优先搜索",
-      "object": "深度优先搜索",
-      "object_category": "算法",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "包括"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "图的遍历算法包括深度优先搜索算法和广度优先搜索算法。",
-          "start": 2034,
-          "end": 2060
-        }
-      ]
-    },
-    {
-      "subject_id": "数据结构:图",
-      "subject": "图",
-      "subject_category": "数据结构",
-      "predicate": "包含",
-      "object_id": "结构子类:十字链表",
-      "object": "十字链表",
+      "object_id": "结构子类:生成树",
+      "object": "生成树",
       "object_category": "结构子类",
       "confidence": 0.9,
       "rules": [
@@ -1038,9 +438,9 @@
       "evidence_count": 1,
       "evidences": [
         {
-          "text": "图的链式存储结构包括邻接表、十字链表和邻接多重表。",
-          "start": 1959,
-          "end": 1984
+          "text": "图的基本概念包括连通图、生成树、最小生成树、重连通图、最短路径和关键路径。",
+          "start": 1884,
+          "end": 1921
         }
       ]
     },
@@ -1049,8 +449,8 @@
       "subject": "图",
       "subject_category": "数据结构",
       "predicate": "包含",
-      "object_id": "结构子类:邻接多重表",
-      "object": "邻接多重表",
+      "object_id": "结构子类:连通图",
+      "object": "连通图",
       "object_category": "结构子类",
       "confidence": 0.9,
       "rules": [
@@ -1062,9 +462,9 @@
       "evidence_count": 1,
       "evidences": [
         {
-          "text": "图的链式存储结构包括邻接表、十字链表和邻接多重表。",
-          "start": 1959,
-          "end": 1984
+          "text": "图的基本概念包括连通图、生成树、最小生成树、重连通图、最短路径和关键路径。",
+          "start": 1884,
+          "end": 1921
         }
       ]
     },
@@ -1073,8 +473,8 @@
       "subject": "图",
       "subject_category": "数据结构",
       "predicate": "包含",
-      "object_id": "结构子类:邻接表",
-      "object": "邻接表",
+      "object_id": "结构子类:重连通图",
+      "object": "重连通图",
       "object_category": "结构子类",
       "confidence": 0.9,
       "rules": [
@@ -1086,9 +486,9 @@
       "evidence_count": 1,
       "evidences": [
         {
-          "text": "图的链式存储结构包括邻接表、十字链表和邻接多重表。",
-          "start": 1959,
-          "end": 1984
+          "text": "图的基本概念包括连通图、生成树、最小生成树、重连通图、最短路径和关键路径。",
+          "start": 1884,
+          "end": 1921
         }
       ]
     },
@@ -1141,30 +541,6 @@
       ]
     },
     {
-      "subject_id": "数据结构:广义表",
-      "subject": "广义表",
-      "subject_category": "数据结构",
-      "predicate": "包含",
-      "object_id": "操作:遍历",
-      "object": "遍历",
-      "object_category": "操作",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "包括"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "广义表的常见操作包括复制、遍历和求长度。",
-          "start": 1527,
-          "end": 1547
-        }
-      ]
-    },
-    {
       "subject_id": "数据结构:数组",
       "subject": "数组",
       "subject_category": "数据结构",
@@ -1192,54 +568,6 @@
       "subject_id": "数据结构:查找表",
       "subject": "查找表",
       "subject_category": "数据结构",
-      "predicate": "包含",
-      "object_id": "结构子类:动态查找表",
-      "object": "动态查找表",
-      "object_category": "结构子类",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "分为"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "查找表可以分为静态查找表和动态查找表。",
-          "start": 2376,
-          "end": 2395
-        }
-      ]
-    },
-    {
-      "subject_id": "数据结构:查找表",
-      "subject": "查找表",
-      "subject_category": "数据结构",
-      "predicate": "包含",
-      "object_id": "结构子类:静态查找表",
-      "object": "静态查找表",
-      "object_category": "结构子类",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "分为"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "查找表可以分为静态查找表和动态查找表。",
-          "start": 2376,
-          "end": 2395
-        }
-      ]
-    },
-    {
-      "subject_id": "数据结构:查找表",
-      "subject": "查找表",
-      "subject_category": "数据结构",
       "predicate": "属于",
       "object_id": "基础概念:数据结构",
       "object": "数据结构",
@@ -1255,56 +583,8 @@
       "evidences": [
         {
           "text": "查找表是一种用于查找数据元素的数据结构。",
-          "start": 2356,
-          "end": 2376
-        }
-      ]
-    },
-    {
-      "subject_id": "数据结构:栈",
-      "subject": "栈",
-      "subject_category": "数据结构",
-      "predicate": "包含",
-      "object_id": "应用问题:括号匹配",
-      "object": "括号匹配",
-      "object_category": "应用问题",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "包括"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "栈的典型应用包括递归调用、进制转换、括号匹配和表达式求值。",
-          "start": 929,
-          "end": 958
-        }
-      ]
-    },
-    {
-      "subject_id": "数据结构:栈",
-      "subject": "栈",
-      "subject_category": "数据结构",
-      "predicate": "包含",
-      "object_id": "应用问题:表达式求值",
-      "object": "表达式求值",
-      "object_category": "应用问题",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "包括"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "栈的典型应用包括递归调用、进制转换、括号匹配和表达式求值。",
-          "start": 929,
-          "end": 958
+          "start": 2326,
+          "end": 2346
         }
       ]
     },
@@ -1353,54 +633,6 @@
           "text": "栈的典型应用包括递归调用、进制转换、括号匹配和表达式求值。",
           "start": 929,
           "end": 958
-        }
-      ]
-    },
-    {
-      "subject_id": "数据结构:栈",
-      "subject": "栈",
-      "subject_category": "数据结构",
-      "predicate": "包含",
-      "object_id": "结构子类:链栈",
-      "object": "链栈",
-      "object_category": "结构子类",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "包括"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "栈包括顺序栈和链栈。",
-          "start": 892,
-          "end": 902
-        }
-      ]
-    },
-    {
-      "subject_id": "数据结构:栈",
-      "subject": "栈",
-      "subject_category": "数据结构",
-      "predicate": "包含",
-      "object_id": "结构子类:顺序栈",
-      "object": "顺序栈",
-      "object_category": "结构子类",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "包括"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "栈包括顺序栈和链栈。",
-          "start": 892,
-          "end": 902
         }
       ]
     },
@@ -1505,56 +737,8 @@
       "subject": "树",
       "subject_category": "数据结构",
       "predicate": "包含",
-      "object_id": "结构子类:哈夫曼树",
-      "object": "哈夫曼树",
-      "object_category": "结构子类",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "包括"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "树包括普通树、二叉树、线索二叉树和哈夫曼树。",
-          "start": 1598,
-          "end": 1620
-        }
-      ]
-    },
-    {
-      "subject_id": "数据结构:树",
-      "subject": "树",
-      "subject_category": "数据结构",
-      "predicate": "包含",
       "object_id": "结构子类:普通树",
       "object": "普通树",
-      "object_category": "结构子类",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "包括"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "树包括普通树、二叉树、线索二叉树和哈夫曼树。",
-          "start": 1598,
-          "end": 1620
-        }
-      ]
-    },
-    {
-      "subject_id": "数据结构:树",
-      "subject": "树",
-      "subject_category": "数据结构",
-      "predicate": "包含",
-      "object_id": "结构子类:线索二叉树",
-      "object": "线索二叉树",
       "object_category": "结构子类",
       "confidence": 0.9,
       "rules": [
@@ -1601,57 +785,9 @@
       "subject": "线性表",
       "subject_category": "数据结构",
       "predicate": "包含",
-      "object_id": "数据结构:链表",
-      "object": "链表",
-      "object_category": "数据结构",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "包括"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "线性表包括顺序表、链表和静态链表。",
-          "start": 313,
-          "end": 330
-        }
-      ]
-    },
-    {
-      "subject_id": "数据结构:线性表",
-      "subject": "线性表",
-      "subject_category": "数据结构",
-      "predicate": "包含",
       "object_id": "数据结构:顺序表",
       "object": "顺序表",
       "object_category": "数据结构",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "包括"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "线性表包括顺序表、链表和静态链表。",
-          "start": 313,
-          "end": 330
-        }
-      ]
-    },
-    {
-      "subject_id": "数据结构:线性表",
-      "subject": "线性表",
-      "subject_category": "数据结构",
-      "predicate": "包含",
-      "object_id": "结构子类:静态链表",
-      "object": "静态链表",
-      "object_category": "结构子类",
       "confidence": 0.9,
       "rules": [
         "contains"
@@ -1721,109 +857,8 @@
       "subject": "链表",
       "subject_category": "数据结构",
       "predicate": "包含",
-      "object_id": "基础概念:结点",
-      "object": "结点",
-      "object_category": "基础概念",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "包括"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "链表相关的常见问题包括删除链表倒数第N个结点、单链表反转、判断两个单链表是否相交和判断链表中是否存在环。",
-          "start": 759,
-          "end": 811
-        }
-      ]
-    },
-    {
-      "subject_id": "数据结构:链表",
-      "subject": "链表",
-      "subject_category": "数据结构",
-      "predicate": "包含",
-      "object_id": "操作:删除",
-      "object": "删除",
-      "object_category": "操作",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "包括"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "链表相关的常见问题包括删除链表倒数第N个结点、单链表反转、判断两个单链表是否相交和判断链表中是否存在环。",
-          "start": 759,
-          "end": 811
-        }
-      ]
-    },
-    {
-      "subject_id": "数据结构:链表",
-      "subject": "链表",
-      "subject_category": "数据结构",
-      "predicate": "包含",
-      "object_id": "操作:反转",
-      "object": "反转",
-      "object_category": "操作",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "包括"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "链表相关的常见问题包括删除链表倒数第N个结点、单链表反转、判断两个单链表是否相交和判断链表中是否存在环。",
-          "start": 759,
-          "end": 811
-        }
-      ]
-    },
-    {
-      "subject_id": "数据结构:链表",
-      "subject": "链表",
-      "subject_category": "数据结构",
-      "predicate": "包含",
       "object_id": "结构子类:单链表",
       "object": "单链表",
-      "object_category": "结构子类",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "包括"
-      ],
-      "evidence_count": 2,
-      "evidences": [
-        {
-          "text": "链表包括单链表、双向链表、循环链表和双向循环链表。",
-          "start": 529,
-          "end": 554
-        },
-        {
-          "text": "链表相关的常见问题包括删除链表倒数第N个结点、单链表反转、判断两个单链表是否相交和判断链表中是否存在环。",
-          "start": 759,
-          "end": 811
-        }
-      ]
-    },
-    {
-      "subject_id": "数据结构:链表",
-      "subject": "链表",
-      "subject_category": "数据结构",
-      "predicate": "包含",
-      "object_id": "结构子类:双向循环链表",
-      "object": "双向循环链表",
       "object_category": "结构子类",
       "confidence": 0.9,
       "rules": [
@@ -1869,30 +904,6 @@
       "subject_id": "数据结构:链表",
       "subject": "链表",
       "subject_category": "数据结构",
-      "predicate": "包含",
-      "object_id": "结构子类:循环链表",
-      "object": "循环链表",
-      "object_category": "结构子类",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "包括"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "链表包括单链表、双向链表、循环链表和双向循环链表。",
-          "start": 529,
-          "end": 554
-        }
-      ]
-    },
-    {
-      "subject_id": "数据结构:链表",
-      "subject": "链表",
-      "subject_category": "数据结构",
       "predicate": "属于",
       "object_id": "数据结构:线性表",
       "object": "线性表",
@@ -1910,78 +921,6 @@
           "text": "链表是一种采用链式存储结构实现的线性表。",
           "start": 455,
           "end": 475
-        }
-      ]
-    },
-    {
-      "subject_id": "数据结构:队列",
-      "subject": "队列",
-      "subject_category": "数据结构",
-      "predicate": "包含",
-      "object_id": "数据结构:栈",
-      "object": "栈",
-      "object_category": "数据结构",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "包括"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "队列的典型问题包括两个栈实现一个队列和两个队列实现一个栈。",
-          "start": 1095,
-          "end": 1124
-        }
-      ]
-    },
-    {
-      "subject_id": "数据结构:队列",
-      "subject": "队列",
-      "subject_category": "数据结构",
-      "predicate": "包含",
-      "object_id": "结构子类:循环队列",
-      "object": "循环队列",
-      "object_category": "结构子类",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "包括"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "队列包括顺序队列、循环队列和链式队列。",
-          "start": 1047,
-          "end": 1066
-        }
-      ]
-    },
-    {
-      "subject_id": "数据结构:队列",
-      "subject": "队列",
-      "subject_category": "数据结构",
-      "predicate": "包含",
-      "object_id": "结构子类:链式队列",
-      "object": "链式队列",
-      "object_category": "结构子类",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "包括"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "队列包括顺序队列、循环队列和链式队列。",
-          "start": 1047,
-          "end": 1066
         }
       ]
     },
@@ -2076,8 +1015,8 @@
       "evidences": [
         {
           "text": "二叉排序树是一种具有有序性质的二叉树。",
-          "start": 2576,
-          "end": 2595
+          "start": 2546,
+          "end": 2565
         }
       ]
     },
@@ -2154,78 +1093,6 @@
       ]
     },
     {
-      "subject_id": "结构子类:二叉树",
-      "subject": "二叉树",
-      "subject_category": "结构子类",
-      "predicate": "包含",
-      "object_id": "操作:后序遍历",
-      "object": "后序遍历",
-      "object_category": "操作",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "包括"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "二叉树的遍历方式包括先序遍历、中序遍历、后序遍历和层次遍历。",
-          "start": 1796,
-          "end": 1826
-        }
-      ]
-    },
-    {
-      "subject_id": "结构子类:二叉树",
-      "subject": "二叉树",
-      "subject_category": "结构子类",
-      "predicate": "包含",
-      "object_id": "操作:层次遍历",
-      "object": "层次遍历",
-      "object_category": "操作",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "包括"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "二叉树的遍历方式包括先序遍历、中序遍历、后序遍历和层次遍历。",
-          "start": 1796,
-          "end": 1826
-        }
-      ]
-    },
-    {
-      "subject_id": "结构子类:动态查找表",
-      "subject": "动态查找表",
-      "subject_category": "结构子类",
-      "predicate": "包含",
-      "object_id": "数据结构:哈希表",
-      "object": "哈希表",
-      "object_category": "数据结构",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "包括"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "动态查找表包括二叉排序树、平衡二叉树、红黑树、B树、B+树、键树和哈希表。",
-          "start": 2539,
-          "end": 2576
-        }
-      ]
-    },
-    {
       "subject_id": "结构子类:动态查找表",
       "subject": "动态查找表",
       "subject_category": "结构子类",
@@ -2244,8 +1111,8 @@
       "evidences": [
         {
           "text": "动态查找表包括二叉排序树、平衡二叉树、红黑树、B树、B+树、键树和哈希表。",
-          "start": 2539,
-          "end": 2576
+          "start": 2509,
+          "end": 2546
         }
       ]
     },
@@ -2268,8 +1135,8 @@
       "evidences": [
         {
           "text": "动态查找表包括二叉排序树、平衡二叉树、红黑树、B树、B+树、键树和哈希表。",
-          "start": 2539,
-          "end": 2576
+          "start": 2509,
+          "end": 2546
         }
       ]
     },
@@ -2292,8 +1159,8 @@
       "evidences": [
         {
           "text": "动态查找表包括二叉排序树、平衡二叉树、红黑树、B树、B+树、键树和哈希表。",
-          "start": 2539,
-          "end": 2576
+          "start": 2509,
+          "end": 2546
         }
       ]
     },
@@ -2316,8 +1183,8 @@
       "evidences": [
         {
           "text": "动态查找表包括二叉排序树、平衡二叉树、红黑树、B树、B+树、键树和哈希表。",
-          "start": 2539,
-          "end": 2576
+          "start": 2509,
+          "end": 2546
         }
       ]
     },
@@ -2340,32 +1207,8 @@
       "evidences": [
         {
           "text": "动态查找表包括二叉排序树、平衡二叉树、红黑树、B树、B+树、键树和哈希表。",
-          "start": 2539,
-          "end": 2576
-        }
-      ]
-    },
-    {
-      "subject_id": "结构子类:动态查找表",
-      "subject": "动态查找表",
-      "subject_category": "结构子类",
-      "predicate": "包含",
-      "object_id": "结构子类:键树",
-      "object": "键树",
-      "object_category": "结构子类",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "包括"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "动态查找表包括二叉排序树、平衡二叉树、红黑树、B树、B+树、键树和哈希表。",
-          "start": 2539,
-          "end": 2576
+          "start": 2509,
+          "end": 2546
         }
       ]
     },
@@ -2422,9 +1265,9 @@
       "subject": "红黑树",
       "subject_category": "结构子类",
       "predicate": "属于",
-      "object_id": "数据结构:树",
-      "object": "树",
-      "object_category": "数据结构",
+      "object_id": "结构子类:二叉查找树",
+      "object": "二叉查找树",
+      "object_category": "结构子类",
       "confidence": 0.92,
       "rules": [
         "hypernym"
@@ -2436,8 +1279,8 @@
       "evidences": [
         {
           "text": "红黑树是一种近似平衡的二叉查找树。",
-          "start": 2630,
-          "end": 2647
+          "start": 2600,
+          "end": 2617
         }
       ]
     },
@@ -2460,56 +1303,8 @@
       "evidences": [
         {
           "text": "静态查找表的查找方法包括顺序查找、二分查找、分块查找和静态树表查找。",
-          "start": 2461,
-          "end": 2495
-        }
-      ]
-    },
-    {
-      "subject_id": "结构子类:静态查找表",
-      "subject": "静态查找表",
-      "subject_category": "结构子类",
-      "predicate": "包含",
-      "object_id": "算法:分块查找",
-      "object": "分块查找",
-      "object_category": "算法",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "包括"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "静态查找表的查找方法包括顺序查找、二分查找、分块查找和静态树表查找。",
-          "start": 2461,
-          "end": 2495
-        }
-      ]
-    },
-    {
-      "subject_id": "结构子类:静态查找表",
-      "subject": "静态查找表",
-      "subject_category": "结构子类",
-      "predicate": "包含",
-      "object_id": "算法:静态树表查找",
-      "object": "静态树表查找",
-      "object_category": "算法",
-      "confidence": 0.9,
-      "rules": [
-        "contains"
-      ],
-      "triggers": [
-        "包括"
-      ],
-      "evidence_count": 1,
-      "evidences": [
-        {
-          "text": "静态查找表的查找方法包括顺序查找、二分查找、分块查找和静态树表查找。",
-          "start": 2461,
-          "end": 2495
+          "start": 2431,
+          "end": 2465
         }
       ]
     },
@@ -2532,8 +1327,8 @@
       "evidences": [
         {
           "text": "静态查找表的查找方法包括顺序查找、二分查找、分块查找和静态树表查找。",
-          "start": 2461,
-          "end": 2495
+          "start": 2431,
+          "end": 2465
         }
       ]
     },

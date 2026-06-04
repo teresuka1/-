@@ -13,7 +13,6 @@ DEFAULT_OUTPUT = "data/ds_relations.json"
 DEFAULT_CSV_OUTPUT = "data/ds_relations.csv"
 
 # 这些类别集合用于关系匹配时的轻量级类型约束，
-# 让规则不只适用于单一文本，而能迁移到相似教材语料。
 STRUCTURE_CATEGORIES = {
     "基础概念",
     "逻辑结构",
@@ -82,10 +81,10 @@ class PairRule:
 
 
 # 这里定义实体对关系抽取所使用的规则集合。
-# 当前版本只保留两类最终输出关系：
-# 1）属于：表示类型归属或上下位关系；
-# 2）包含：统一表示列举、成员、部分构成等较宽泛的包含关系。
-# 其中“由……组成/构成”仍然保留独立匹配规则，但最终输出关系统一记为“包含”。
+# 每条规则描述：
+# 1）两个实体之间应出现什么触发词；
+# 2）是否还要求尾实体后方出现补充触发词；
+# 3）头实体和尾实体允许属于哪些类别。
 PAIR_RULES: Tuple[PairRule, ...] = (
     PairRule(
         name="hypernym",
@@ -117,14 +116,72 @@ PAIR_RULES: Tuple[PairRule, ...] = (
         confidence=0.9,
     ),
     PairRule(
-        name="composition_contains",
-        predicate="包含",
+        name="composition",
+        predicate="组成",
         left_triggers=("由",),
         right_triggers=("组成", "构成"),
         subject_categories=tuple(STRUCTURE_CATEGORIES | STORAGE_CATEGORIES),
         object_categories=tuple(STRUCTURE_CATEGORIES | PROPERTY_CATEGORIES | STORAGE_CATEGORIES),
         max_char_gap=100,
         confidence=0.9,
+    ),
+    PairRule(
+        name="supports_operation",
+        predicate="支持操作",
+        left_triggers=("支持", "允许", "只允许", "只进行", "进行"),
+        subject_categories=tuple(STRUCTURE_CATEGORIES | STORAGE_CATEGORIES),
+        object_categories=tuple(OPERATION_CATEGORIES),
+        max_char_gap=100,
+        confidence=0.88,
+    ),
+    PairRule(
+        name="has_property",
+        predicate="具有性质",
+        left_triggers=("规则是", "规则为", "性质是", "性质为", "特点是", "具有", "是"),
+        subject_categories=tuple(
+            STRUCTURE_CATEGORIES | STORAGE_CATEGORIES | ALGORITHM_CATEGORIES | APPLICATION_CATEGORIES
+        ),
+        object_categories=tuple(PROPERTY_CATEGORIES),
+        max_char_gap=80,
+        confidence=0.82,
+    ),
+    PairRule(
+        name="uses_storage",
+        predicate="采用存储结构",
+        left_triggers=("采用", "使用"),
+        subject_categories=tuple(STRUCTURE_CATEGORIES),
+        object_categories=tuple(STORAGE_CATEGORIES | {"结构子类"}),
+        max_char_gap=100,
+        confidence=0.84,
+    ),
+    PairRule(
+        name="applied_to",
+        predicate="应用于",
+        left_triggers=("用于", "适用于", "常用于", "适合", "适合求", "用于求解", "求解"),
+        subject_categories=tuple(STRUCTURE_CATEGORIES | ALGORITHM_CATEGORIES),
+        object_categories=tuple(APPLICATION_CATEGORIES),
+        max_char_gap=100,
+        confidence=0.82,
+    ),
+    PairRule(
+        name="related_to",
+        predicate="相关",
+        left_triggers=("与", "和"),
+        right_triggers=("相关", "密切相关", "有关"),
+        subject_categories=tuple(
+            STRUCTURE_CATEGORIES
+            | STORAGE_CATEGORIES
+            | ALGORITHM_CATEGORIES
+            | APPLICATION_CATEGORIES
+        ),
+        object_categories=tuple(
+            STRUCTURE_CATEGORIES
+            | STORAGE_CATEGORIES
+            | ALGORITHM_CATEGORIES
+            | APPLICATION_CATEGORIES
+        ),
+        max_char_gap=80,
+        confidence=0.75,
     ),
 )
 
@@ -251,28 +308,8 @@ def sentence_mentions(sentence: SentenceSpan, mentions: Sequence[Mention]) -> Li
         for mention in mentions
         if sentence.start <= mention.start and mention.end <= sentence.end
     ]
-
-    # 句内匹配前先做一次最长优先去嵌套，避免把“连通图”中的“连通”、
-    # “生成树”中的“树”这类短 mention 一并带入关系抽取。
-    selected.sort(
-        key=lambda item: (item.start, -(item.end - item.start), item.canonical_name)
-    )
-    filtered: List[Mention] = []
-    for mention in selected:
-        if any(
-            kept.start <= mention.start and mention.end <= kept.end
-            for kept in filtered
-        ):
-            continue
-        filtered = [
-            kept
-            for kept in filtered
-            if not (mention.start <= kept.start and kept.end <= mention.end)
-        ]
-        filtered.append(mention)
-
-    filtered.sort(key=lambda item: (item.start, item.end, item.canonical_name))
-    return filtered
+    selected.sort(key=lambda item: (item.start, item.end, item.canonical_name))
+    return selected
 
 
 def find_trigger(text: str, triggers: Sequence[str]) -> Optional[str]:
@@ -287,10 +324,12 @@ def find_trigger(text: str, triggers: Sequence[str]) -> Optional[str]:
     return matched[0]
 
 
-def is_name_character(char: str) -> bool:
-    """判断字符是否像术语内部字符，而不是分隔符。"""
+def trigger_last_index(text: str, trigger: str) -> int:
+    """返回触发词最后一次出现的位置，便于使用最近触发词启发式。"""
 
-    return bool(re.fullmatch(r"[\u4e00-\u9fffA-Za-z0-9+]", char))
+    if not trigger:
+        return -1
+    return text.rfind(trigger)
 
 
 def match_rule(rule: PairRule, sentence: SentenceSpan, subject: Mention, obj: Mention) -> Optional[dict]:
@@ -314,8 +353,6 @@ def match_rule(rule: PairRule, sentence: SentenceSpan, subject: Mention, obj: Me
     local_object_end = obj.end - sentence.start
     between_text = sentence.text[local_subject_end:local_object_start]
     suffix_text = sentence.text[local_object_end:]
-    previous_char = sentence.text[local_object_start - 1] if local_object_start > 0 else ""
-    next_char = sentence.text[local_object_end] if local_object_end < len(sentence.text) else ""
 
     if len(between_text) > rule.max_char_gap:
         return None
@@ -323,39 +360,31 @@ def match_rule(rule: PairRule, sentence: SentenceSpan, subject: Mention, obj: Me
     left_trigger = find_trigger(between_text, rule.left_triggers)
     if not left_trigger:
         return None
+    trigger_index = trigger_last_index(between_text, left_trigger)
 
     right_trigger = find_trigger(suffix_text, rule.right_triggers) if rule.right_triggers else None
     if rule.right_triggers and not right_trigger:
         return None
 
-    # 当前只保留两类关系，规则过滤也相应精简。
-    # “由……组成/构成”仍走独立规则，但最终统一映射为“包含”。
-    if rule.name == "contains":
-        # “包含指向后继结点的指针”中真正被包含的是“指针”，
-        # 不应把“后继结点/前驱结点”误识别为被包含对象。
-        if "指向" in between_text and not any(
-            keyword in obj.canonical_name for keyword in ("指针", "引用")
-        ):
+    # 针对某些过于泛化的触发词（如“是”“使用”）增加额外限制，
+    # 以减少常见误抽取。
+    if rule.name == "has_property" and "是" == left_trigger and len(between_text.strip()) > 8:
+        return None
+    if (
+        rule.name == "contains"
+        and subject.category in APPLICATION_CATEGORIES
+        and obj.category in ALGORITHM_CATEGORIES
+        and ("算法包括" in between_text or "方法包括" in between_text)
+    ):
+        return None
+    if rule.name == "uses_storage":
+        trigger_tail = between_text[trigger_index + len(left_trigger) :] if trigger_index >= 0 else ""
+        if "存储" not in between_text and "存储" not in suffix_text:
             return None
-
-        # “连通图”中的“连通”、“生成树”中的“树”这类短实体，
-        # 实际上嵌在更长术语内部，不应被当成“包括”列表项。
-        if not any(keyword in obj.canonical_name for keyword in ("指针", "引用")):
-            if next_char and is_name_character(next_char):
-                return None
-            if (
-                previous_char
-                and is_name_character(previous_char)
-                and not between_text.rstrip().endswith(left_trigger)
-            ):
-                return None
-
-    if rule.name == "hypernym":
-        # “A 是一种用于查找数据元素的数据结构”这类定义句中，
-        # 只保留真正落在句末的上位类，避免把中间名词误识别为尾实体。
-        trailing_text = re.sub(r"[。！？；;，、,\s]+", "", suffix_text)
-        if trailing_text:
+        if any(mark in trigger_tail for mark in "，。；"):
             return None
+    if rule.name == "applied_to" and "用于" not in between_text and "适用" not in between_text and "求" not in between_text:
+        return None
 
     # 返回结果中直接保留证据句，方便后续人工检查和导出为图谱关系文件。
     return {
@@ -387,11 +416,77 @@ def extract_pair_relations(sentence: SentenceSpan, mentions: Sequence[Mention]) 
                     results.append(match)
     return results
 
+
+def extract_predicate_after_subject(
+    sentence: SentenceSpan,
+    mentions: Sequence[Mention],
+    predicate: str,
+    triggers: Sequence[str],
+    subject_categories: Sequence[str],
+    object_categories: Sequence[str],
+    confidence: float,
+    max_tail_length: int = 100,
+) -> List[dict]:
+    """处理“一个头实体对应后续多个尾实体”的列表型句式。"""
+
+    results: List[dict] = []
+    for subject in mentions:
+        if not category_allowed(subject.category, subject_categories):
+            continue
+        subject_tail = sentence.text[subject.end - sentence.start :]
+        trigger = find_trigger(subject_tail, triggers)
+        if not trigger:
+            continue
+
+        trigger_index = subject_tail.find(trigger)
+        object_zone = subject_tail[trigger_index + len(trigger) :]
+        if len(object_zone) > max_tail_length:
+            object_zone = object_zone[:max_tail_length]
+
+        for obj in mentions:
+            if subject.entity_id == obj.entity_id:
+                continue
+            if obj.start <= subject.end:
+                continue
+            if not category_allowed(obj.category, object_categories):
+                continue
+            if obj.canonical_name and obj.canonical_name in object_zone:
+                results.append(
+                    {
+                        "subject_id": subject.entity_id,
+                        "subject": subject.canonical_name,
+                        "subject_category": subject.category,
+                        "predicate": predicate,
+                        "object_id": obj.entity_id,
+                        "object": obj.canonical_name,
+                        "object_category": obj.category,
+                        "trigger": trigger,
+                        "rule": f"tail_{predicate}",
+                        "confidence": confidence,
+                        "evidence": sentence.text,
+                        "evidence_start": sentence.start,
+                        "evidence_end": sentence.end,
+                    }
+                )
+    return results
+
+
 def extract_sentence_relations(sentence: SentenceSpan, mentions: Sequence[Mention]) -> List[dict]:
     """抽取当前句子中所有可识别的关系。"""
 
     relations: List[dict] = []
     relations.extend(extract_pair_relations(sentence, mentions))
+    relations.extend(
+        extract_predicate_after_subject(
+            sentence=sentence,
+            mentions=mentions,
+            predicate="求解问题",
+            triggers=("算法包括", "方法包括", "算法有", "常见排序算法包括"),
+            subject_categories=tuple(APPLICATION_CATEGORIES),
+            object_categories=tuple(ALGORITHM_CATEGORIES),
+            confidence=0.9,
+        )
+    )
     return relations
 
 
@@ -500,6 +595,16 @@ def extract_relations(text: str, mentions: Sequence[Mention]) -> Tuple[List[dict
                 "object_categories": list(rule.object_categories),
             }
             for rule in PAIR_RULES
+        ]
+        + [
+            {
+                "name": "tail_求解问题",
+                "predicate": "求解问题",
+                "left_triggers": ["算法包括", "方法包括", "算法有", "常见排序算法包括"],
+                "right_triggers": [],
+                "subject_categories": list(APPLICATION_CATEGORIES),
+                "object_categories": list(ALGORITHM_CATEGORIES),
+            }
         ],
     }
     return aggregated_relations, stats

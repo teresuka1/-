@@ -100,8 +100,6 @@ DEFAULT_DICT: Dict[str, List[str]] = {
     "算法": [
         "BF算法",
         "KMP算法",
-        "DFS",
-        "BFS",
         "Prim算法",
         "Kruskal算法",
         "Dijkstra算法",
@@ -180,14 +178,21 @@ DEFAULT_DICT: Dict[str, List[str]] = {
 
 
 REGEX_RULES: Dict[str, List[str]] = {
+    "结构子类": [
+        r"(?<![\u4e00-\u9fa5A-Za-z0-9+])[A-Za-z0-9+]{0,4}[\u4e00-\u9fa5]{0,4}树(?![\u4e00-\u9fa5A-Za-z0-9+])",
+        r"(?<![\u4e00-\u9fa5A-Za-z0-9+])[A-Za-z0-9+]{0,4}[\u4e00-\u9fa5]{0,4}图(?![\u4e00-\u9fa5A-Za-z0-9+])",
+        r"(?<![\u4e00-\u9fa5A-Za-z0-9+])[A-Za-z0-9+]{0,4}[\u4e00-\u9fa5]{0,4}链表(?![\u4e00-\u9fa5A-Za-z0-9+])",
+        r"(?<![\u4e00-\u9fa5A-Za-z0-9+])[A-Za-z0-9+]{0,4}[\u4e00-\u9fa5]{0,4}队列(?![\u4e00-\u9fa5A-Za-z0-9+])",
+        r"(?<![\u4e00-\u9fa5A-Za-z0-9+])[A-Za-z0-9+]{0,4}[\u4e00-\u9fa5]{0,4}栈(?![\u4e00-\u9fa5A-Za-z0-9+])",
+    ],
     "算法": [
-        r"[A-Z][A-Za-z0-9+]*算法",
+        r"[A-Za-z][A-Za-z0-9+]*算法",
+        r"(?<![\u4e00-\u9fa5A-Za-z0-9+])[A-Za-z0-9+]{0,4}[\u4e00-\u9fa5]{1,6}算法(?![\u4e00-\u9fa5A-Za-z0-9+])",
+        r"(?<![\u4e00-\u9fa5A-Za-z0-9+])[A-Za-z0-9+]{0,4}[\u4e00-\u9fa5]{1,6}排序(?![\u4e00-\u9fa5A-Za-z0-9+])",
         r"(深度优先|广度优先)搜索",
         r"\b[A-Z]{2,}\b",
     ],
-
 }
-
 
 def load_domain_dict(dict_path: Path) -> Dict[str, List[str]]:
     if not dict_path.exists():

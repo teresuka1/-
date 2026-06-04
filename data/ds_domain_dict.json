@@ -92,8 +92,6 @@
     "算法": [
         "BF算法",
         "KMP算法",
-        "DFS",
-        "BFS",
         "Prim算法",
         "Kruskal算法",
         "Dijkstra算法",

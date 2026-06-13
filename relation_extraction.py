@@ -377,9 +377,18 @@ def match_rule(rule: PairRule, sentence: SentenceSpan, subject: Mention, obj: Me
         and ("算法包括" in between_text or "方法包括" in between_text)
     ):
         return None
+    if rule.name == "hypernym":
+        trigger_tail = between_text[trigger_index + len(left_trigger) :] if trigger_index >= 0 else ""
+        if any(marker in trigger_tail for marker in ("采用", "使用", "支持", "包括", "包含", "分为", "用于", "适用", "求解")):
+            return None
     if rule.name == "uses_storage":
         trigger_tail = between_text[trigger_index + len(left_trigger) :] if trigger_index >= 0 else ""
-        if "存储" not in between_text and "存储" not in suffix_text:
+        if (
+            "存储" not in between_text
+            and "存储" not in suffix_text
+            and "存储" not in obj.canonical_name
+            and "存储" not in obj.mention_text
+        ):
             return None
         if any(mark in trigger_tail for mark in "，。；"):
             return None
@@ -500,6 +509,8 @@ def deduplicate_relations(relations: Sequence[dict]) -> List[dict]:
             relation["predicate"],
             relation["object_id"],
             relation["evidence"],
+            relation["evidence_start"],
+            relation["evidence_end"],
         )
         current = best.get(key)
         if current is None or relation["confidence"] > current["confidence"]:
